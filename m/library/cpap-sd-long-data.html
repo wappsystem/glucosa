@@ -10,7 +10,8 @@
         //-------------------------------------
         $('#title__ID').text($vm.module_list[$vm.vm['__ID'].name].task_name); //$('#title__ID').text('Anthropometry')
         //-------------------------------------
-        var fields="weight,height,BMI,neck,head,neck,neck_corrected,waist_circumference,hip_circumference,diastolic_bp_left,systolic_bp_left,diastolic_bp_right,systolic_bp_right,diastolic_bp_mean,systolic_bp_mean,heart_rate";
+        var fields="d1_used,d1_sleep,d1_ahi,d2_used,d2_sleep,d2_ahi,d3_used,d3_sleep,d3_ahi,d4_used,d4_sleep,d4_ahi,d5_used,d5_sleep,d5_ahi,d6_used,d6_sleep,d6_ahi,d7_used,d7_sleep,d7_ahi,d8_used,d8_sleep,d8_ahi,d9_used,d9_sleep,d9_ahi,d10_used,d10_sleep,d10_ahi,d11_used,d11_sleep,d11_ahi,d12_used,d12_sleep,d12_ahi,d13_used,d13_sleep,d13_ahi,d14_used,d14_sleep,d14_ahi";
+        fields+=",days_used,mean_hours_used,cpap_hours,cpap_nights,mean_ahi"
         m.fields="_Form,_Status,_Notes,_Participant_ID,Participant,"+fields+",Submit_date,Submitted_by,_Delete";
         //-------------------------------------
     }

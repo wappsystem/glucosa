@@ -28,9 +28,9 @@
                                 <div class="questiongroup ">
                                     <fieldset class="">
                                         <div class=row>
-                                            <div class="col-sm-3"><label><span class="">Weight (kg)</span><input type=number min="30" max="180" class=form-control name=weight></label></div>
-                                            <div class="col-sm-3"><label><span class="">Height (cm)</span><input type=number min="100" max="210" class=form-control name=height></label></div>
-                                            <div class="col-sm-3"><label><span class="">BMI (kg/m<sup>2</sup>)</span><input type=number readonly class=form-control name=BMI></label></div>
+                                            <div class="col-sm-3"><label><span class="">Baseline Insulin</span><input type=number class=form-control name=i_bl></label></div>
+                                            <div class="col-sm-3"><label><span class="">Insulin 10</span><input type=number class=form-control name=i_10></label></div>
+                                            <div class="col-sm-3"><label><span class="">Insulin 20</span><input type=number class=form-control name=i_20></label></div>
                                         </div>
                                     </fieldset>
                                 </div>
@@ -39,10 +39,9 @@
                                 <div class="questiongroup ">
                                     <fieldset class="">
                                         <div class=row>
-                                            <div class="col-sm-3"><label><span class="">Neck Circumference (cm)</span><input type=number min="30" max="55" class=form-control name=neck></label></div>
-                                            <div class="col-sm-3"><label><span class="">Neck Circumference Corrected (cm)</span><input min="30" max="55" type=number class=form-control name=neck_corrected></label></div>
-                                            <div class="col-sm-3"><label><span class="">Waist Circumference</span><input min="75" max="175" type=number class=form-control name=waist_circumference></label></div>
-                                            <div class="col-sm-3"><label><span class="">Hip Circumference</span><input min="75" max="175" type=number class=form-control name=hip_circumference></label></div>
+                                            <div class="col-sm-3"><label><span class="">Insulin 30</span><input type=number class=form-control name=i_30></label></div>
+                                            <div class="col-sm-3"><label><span class="">Insulin 60</span><input type=number class=form-control name=i_60></label></div>
+                                            <div class="col-sm-3"><label><span class="">Insulin 90</span><input type=number class=form-control name=i_90></label></div>
                                         </div>
                                     </fieldset>
                                 </div>
@@ -51,10 +50,9 @@
                                 <div class="questiongroup ">
                                     <fieldset class="">
                                         <div class=row>
-                                            <div class="col-sm-3"><label><span class="">Diastolic BP Left Arm (mmHg)</span><input type=number min="60" max="150" class=form-control name=diastolic_bp_left></label></div>
-                                            <div class="col-sm-3"><label><span class="">Systolic BP Left Arm (mmHg)</span><input min="90" max="210" type=number class=form-control name=systolic_bp_left></label></div>
-                                            <div class="col-sm-3"><label><span class="">Diastolic BP Right Arm (mmHg)</span><input min="60" max="150" type=number class=form-control name=diastolic_bp_right></label></div>
-                                            <div class="col-sm-3"><label><span class="">Systolic BP Right Arm (mmHg)</span><input min="90" max="210" type=number class=form-control name=systolic_bp_right></label></div>
+                                            <div class="col-sm-3"><label><span class="">Insulin 120</span><input type=number class=form-control name=i_120></label></div>
+                                            <div class="col-sm-3"><label><span class="">Insulin 150</span><input type=number class=form-control name=i_150></label></div>
+                                            <div class="col-sm-3"><label><span class="">Insulin 180</span><input type=number class=form-control name=i_180></label></div>
                                         </div>
                                     </fieldset>
                                 </div>
@@ -63,13 +61,35 @@
                                 <div class="questiongroup ">
                                     <fieldset class="">
                                         <div class=row>
-                                            <div class="col-sm-3"><label><span class="">Diastolic BP Mean (mmHg)</span><input type=number min="60" max="150" class=form-control name=diastolic_bp_mean></label></div>
-                                            <div class="col-sm-3"><label><span class="">Systolic BP Mean (mmHg)</span><input min="90" max="210" type=number class=form-control name=systolic_bp_mean></label></div>
-                                            <div class="col-sm-3"><label><span class="">Heart Rate (bpm)</span><input min="35" max="180" type=number class=form-control name=heart_rate></label></div>
+                                            <div class="col-sm-3"><label><span class="">Baseline Glucose</span><input type=number step="0.1" class=form-control name=g_bl></label></div>
+                                            <div class="col-sm-3"><label><span class="">Glucose 10</span><input type= number step="0.1" class=form-control name=g_10></label></div>
+                                            <div class="col-sm-3"><label><span class="">Glucose 20</span><input type= number step="0.1" class=form-control name=g_20></label></div>
                                         </div>
                                     </fieldset>
                                 </div>
-                            </div>                            
+                            </div>
+                            <div class="form-group">
+                                <div class="questiongroup ">
+                                    <fieldset class="">
+                                        <div class=row>
+                                            <div class="col-sm-3"><label><span class="">Glucose 30</span><input type= number step="0.1" class=form-control name=g_30></label></div>
+                                            <div class="col-sm-3"><label><span class="">Glucose 60</span><input type= number step="0.1" class=form-control name=g_60></label></div>
+                                            <div class="col-sm-3"><label><span class="">Glucose 90</span><input type= number step="0.1" class=form-control name=g_90></label></div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="questiongroup ">
+                                    <fieldset class="">
+                                        <div class=row>
+                                            <div class="col-sm-3"><label><span class="">Glucose 120</span><input type= number step="0.1" class=form-control name=g_120></label></div>
+                                            <div class="col-sm-3"><label><span class="">Glucose 150</span><input type= number step="0.1" class=form-control name=g_150></label></div>
+                                            <div class="col-sm-3"><label><span class="">Glucose 180</span><input type= number step="0.1" class=form-control name=g_180></label></div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
                             <button type="submit" id="submit__ID" class="btn btn-primary btn-lg">Submit</button>
                             <div class="form-group">
                                 <div  id=questionnaire_status__ID class="pb-3">
