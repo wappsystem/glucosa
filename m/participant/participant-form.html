@@ -55,6 +55,9 @@
 									</label>
 								</div>
 								<div class="col-sm-12 col-lg-6">
+									<label class=''><span class=''>Sequence</span>
+										<input type=text class=form-control name=Sequence readonly>
+									</label>
 								</div>
 							</div>
 							<div class='row px-4'>
@@ -81,9 +84,11 @@
 			//-------------------------------------
 			VmInclude: __COMPONENT__/f/form.01.js
 			//-------------------------------------
+			var rand_num='';
 			var load = m.load;
 			m.load = function () {
 				load();
+				rand_num='';
 				if (m.input.record == undefined) {
 					$('.row_participant__ID').hide()
 					$('#F__ID input[name=_Password').val($vm.vm_password(8, false));
@@ -96,7 +101,7 @@
 			//-------------------------------------
 			$('#F__ID input[name=Randomisation_Number]').on('click', function () {
 				var I1 = $('#F__ID input[name=Randomisation_Number').val();
-				if (I1 == '') {
+				if ( I1 == '' || I1 == undefined ) {
 					$vm.request({ cmd: "find", table: m.Table, sort: { I1: -1 }, skip: 0, limit: 1 }, function (res) {
 						if (res.sys.permission == false) {
 							$vm.alert("No permission. Private database table, ask the table's owner for permissions.");
@@ -107,14 +112,31 @@
 							if (res.result[0].I1 !== undefined) max_I1 = res.result[0].I1
 						}
 						max_I1++;
-						$('#F__ID input[name=Randomisation_Number').val(max_I1);
+						//$('#F__ID input[name=Randomisation_Number').val(max_I1);
+						$('#F__ID input[name=Randomisation_Number').val('R'+max_I1.toString().padStart(3, "0"));
+						rand_num=max_I1.toString();
 						$('#F__ID input[name=Randomised_by').val($vm.user_name);
 					})
 				}
 			})
 			//-------------------------------------
 			m.before_submit = function (data, index) {
-				var I1 = $('#F__ID input[name=Randomisation_Number').val(); if (I1 != '' && I1 != '-') index.I1 = parseInt(I1);
+                var I1 = rand_num; 
+				if (I1 != '' && I1 != '-') {
+					index.I1 = parseInt(I1);
+                    var nd=new Date()
+                    index.I2=nd.getFullYear()+"-"+$vm.pad(nd.getMonth()+1,2)+"-"+$vm.pad(nd.getDate(),2);
+                    jQuery.ajaxSetup({ async: false });
+                        var tb = $vm.module_list["randomisation-table-data-glucosa"].Table;
+                        var query={UID:index.I1}
+                        $vm.request({ cmd: "find", table: tb,query:query, limit:1 }, function (res) {
+                            if (res.result.length != 0) {
+                                data.Sequence=res.result[0].Data.Sequence;
+                                index.I3=res.result[0].Data.Sequence;
+                            }
+                        });
+                    jQuery.ajaxSetup({ async: true });
+                }
 			}
 			//-------------------------------------
 		}
